@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-custstgacct--seyonsynapsews-seyonsynapsemetadata",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/cb9e64da-4efd-46fb-8c32-57da7c2d36d8/resourceGroups/seyonsynapsemetadata/providers/Microsoft.Storage/storageAccounts/seyonsynapsemetadata",
+		"groupId": "dfs",
+		"fqdns": [
+			"seyonsynapsemetadata.dfs.core.windows.net"
+		]
+	}
+}

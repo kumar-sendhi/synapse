@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "USE lakedatabase;\n    SELECT * FROM sys.tables;\n\n    SELECT * FROM lakedatabase.dbo.myparquettable WHERE name = 'Alice';\n\n\n            SELECT * FROM lakedatabase.dbo.myparquettable",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "lakedatabase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT * FROM sys.databases;\n\n\nCREATE SCHEMA reports\nGO\n\nCREATE OR ALTER VIEW reports.GreenReport\nAS SELECT puYear, puMonth,\n            fareAmount = SUM(fareAmount),\n            tipAmount = SUM(tipAmount),\n            mtaTax = SUM(mtaTax)\nFROM dbo.green\nGROUP BY puYear, puMonth\nGO\n\nCREATE OR ALTER PROCEDURE reports.GreenReportSummary\nAS BEGIN\nSELECT puYear, puMonth,\n            fareAmount = SUM(fareAmount),\n            tipAmount = SUM(tipAmount),\n            mtaTax = SUM(mtaTax)\nFROM dbo.green\nGROUP BY puYear, puMonth\nEND\nGO\n\nCREATE OR ALTER FUNCTION reports.GreenDataReportMonthly(@year int)\nRETURNS TABLE\nRETURN ( SELECT puYear = @year, puMonth,\n                fareAmount = SUM(fareAmount),\n                tipAmount = SUM(tipAmount),\n                mtaTax = SUM(mtaTax)\n        FROM dbo.green\n        WHERE puYear = @year\n        GROUP BY puMonth )\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

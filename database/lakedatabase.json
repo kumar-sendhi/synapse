@@ -1,0 +1,25 @@
+{
+	"name": "lakedatabase",
+	"properties": {
+		"Name": "lakedatabase",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://workspace@seyonsynapsemetadata.dfs.core.windows.net/lakedatabase",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "seyonsynapsews-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 2,
+		"ObjectId": "9397a2aa-d4dd-4fc0-bc15-cc38faee6f5a"
+	},
+	"type": "DATABASE"
+}
