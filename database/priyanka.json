@@ -1,0 +1,22 @@
+{
+	"name": "priyanka",
+	"properties": {
+		"Name": "priyanka",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://workspace@seyonsynapsemetadata.dfs.core.windows.net/priyanka",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "seyonsynapsews-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
