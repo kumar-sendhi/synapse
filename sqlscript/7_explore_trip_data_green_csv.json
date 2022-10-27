@@ -1,0 +1,20 @@
+{
+	"name": "7_explore_trip_data_green_csv",
+	"properties": {
+		"folder": {
+			"name": "nyc_taxi/discovery"
+		},
+		"content": {
+			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK '/raw/trip_data_green_csv/year=2020/month=01/',\n        DATA_SOURCE = 'nyc_taxi_data_raw',\n        HEADER_ROW = TRUE,\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0'\n    ) AS [result]\n\n-- *\n    SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK '/raw/trip_data_green_csv/year=2020/month=01/*',\n        DATA_SOURCE = 'nyc_taxi_data_raw',\n        HEADER_ROW = TRUE,\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0'\n    ) AS [result]\n\n    --*.csv\n    SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK '/raw/trip_data_green_csv/year=2020/month=01/*.csv',\n        DATA_SOURCE = 'nyc_taxi_data_raw',\n        HEADER_ROW = TRUE,\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0'\n    ) AS [result]\n\n\n    -- select data from subfolders\n    SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK '/raw/trip_data_green_csv/year=2020/**',\n        DATA_SOURCE = 'nyc_taxi_data_raw',\n        HEADER_ROW = TRUE,\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0'\n    ) AS [result]\n\n    --Get Data from more than 1 file\n\n    SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK ('raw/trip_data_green_csv/year=2020/month=01/*.csv', 'raw/trip_data_green_csv/year=2020/month=03/*.csv'),\n        DATA_SOURCE = 'nyc_taxi_data_raw',\n        HEADER_ROW = TRUE,\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0'\n    ) AS [result]\n\n\n    -- use more than 1 wild card character\n        SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK ('raw/trip_data_green_csv/year=*/month=*/*.csv'),\n        DATA_SOURCE = 'nyc_taxi_data_raw',\n        HEADER_ROW = TRUE,\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0'\n    ) AS [result]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "nyc_taxi_discovery",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
