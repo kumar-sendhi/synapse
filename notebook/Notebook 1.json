@@ -4,7 +4,7 @@
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"bigDataPool": {
-			"referenceName": "mysparkpool",
+			"referenceName": "seyonsparkpool",
 			"type": "BigDataPoolReference"
 		},
 		"sessionProperties": {
@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "00c12b20-0849-4bad-b455-d8f8c7903a4e"
+				"spark.autotune.trackingId": "5251e373-0bb0-4a88-91c3-5c89d3ac317e"
 			}
 		},
 		"metadata": {
@@ -32,19 +32,19 @@
 				"display_name": "Synapse PySpark"
 			},
 			"language_info": {
-				"name": "sql"
+				"name": "python"
 			},
 			"a365ComputeOptions": {
-				"id": "/subscriptions/cb9e64da-4efd-46fb-8c32-57da7c2d36d8/resourceGroups/seyonsynapserg/providers/Microsoft.Synapse/workspaces/seyonsynapsews/bigDataPools/mysparkpool",
-				"name": "mysparkpool",
+				"id": "/subscriptions/cb9e64da-4efd-46fb-8c32-57da7c2d36d8/resourceGroups/seyonsynapserg/providers/Microsoft.Synapse/workspaces/seyonsynapsews/bigDataPools/seyonsparkpool",
+				"name": "seyonsparkpool",
 				"type": "Spark",
-				"endpoint": "https://seyonsynapsews.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/mysparkpool",
+				"endpoint": "https://seyonsynapsews.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/seyonsparkpool",
 				"auth": {
 					"type": "AAD",
 					"authResource": "https://dev.azuresynapse.net",
 					"authHeader": null
 				},
-				"sparkVersion": "3.2",
+				"sparkVersion": "3.1",
 				"nodeCount": 10,
 				"cores": 4,
 				"memory": 28,
@@ -56,12 +56,25 @@
 			{
 				"cell_type": "code",
 				"metadata": {
-					"collapsed": false
+					"microsoft": {
+						"language": "scala"
+					}
 				},
 				"source": [
-					"CREATE TABLE lakedatabase.myparquettable(id int, name string, birthdate date) USING Parquet"
+					"%%spark \r\n",
+					"import java.sql.DriverManager \r\n",
+					"/** this JDBC url could be copied from Azure portal > Azure SQL database > Connection strings > JDBC **/ \r\n",
+					"val url = s\"jdbc:sqlserver://seyonsqlsvr.database.windows.net:1433;database=seyonsqldb;user=sqladmin;password=Seyon2155$;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;\" \r\n",
+					"try { \r\n",
+					"    val connection = DriverManager.getConnection(url) \r\n",
+					"    val result = connection.createStatement().executeQuery(\"select t.SCHEMA_VERSION from VERSION t\") \r\n",
+					"    result.next(); \r\n",
+					"    println(s\"Successful to test connection. Hive Metastore version is ${result.getString(1)}\") \r\n",
+					"} catch { \r\n",
+					"    case ex: Throwable => println(s\"Failed to establish connection:\\n $ex\") \r\n",
+					"}"
 				],
-				"execution_count": 2
+				"execution_count": 4
 			},
 			{
 				"cell_type": "code",
@@ -77,26 +90,8 @@
 					}
 				},
 				"source": [
-					"using Microsoft.Spark.Sql.Types;\r\n",
-					"\r\n",
-					"var data = new List<GenericRow>();\r\n",
-					"\r\n",
-					"data.Add(new GenericRow(new object[] { 3, \"Seyon\", new Date(2013, 7, 25)}));\r\n",
-					"data.Add(new GenericRow(new object[] { 4, \"Deeran\", new Date(2020, 6, 25)}));\r\n",
-					"\r\n",
-					"var schema = new StructType\r\n",
-					"    (new List<StructField>()\r\n",
-					"        {\r\n",
-					"            new StructField(\"id\", new IntegerType()),\r\n",
-					"            new StructField(\"name\", new StringType()),\r\n",
-					"            new StructField(\"birthdate\", new DateType())\r\n",
-					"        }\r\n",
-					"    );\r\n",
-					"\r\n",
-					"var df = spark.CreateDataFrame(data, schema);\r\n",
-					"df.Write().Mode(SaveMode.Append).InsertInto(\"lakedatabase.myparquettable\");"
-				],
-				"execution_count": 7
+					"jdbc:sqlserver://seyonsqlsvr.database.windows.net:1433;database=seyonsqldb;user=sqladmin@seyonsqlsvr;password=Seyon2155$;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
+				]
 			},
 			{
 				"cell_type": "code",
@@ -110,13 +105,42 @@
 							"deleting": false
 						}
 					},
-					"collapsed": false
+					"microsoft": {
+						"language": "scala"
+					}
 				},
 				"source": [
-					"USE lakedatabase;\r\n",
-					"    SELECT * FROM sys.tables;"
+					"%%spark \r\n",
+					"import java.sql.DriverManager \r\n",
+					"/** this JDBC url could be copied from Azure portal > Azure SQL database > Connection strings > JDBC **/ \r\n",
+					"val url = s\"jdbc:sqlserver://seyonsqlsvr.database.windows.net:1433;database=seyonsqldb;user=sqladmin@seyonsqlsvr;password=abcd1234#;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;\" \r\n",
+					"try { \r\n",
+					"    val connection = DriverManager.getConnection(url) \r\n",
+					"    val result = connection.createStatement().executeQuery(\"select t.SCHEMA_VERSION from VERSION t\") \r\n",
+					"    result.next(); \r\n",
+					"    println(s\"Successful to test connection. Hive Metastore version is ${result.getString(1)}\") \r\n",
+					"} catch { \r\n",
+					"    case ex: Throwable => println(s\"Failed to establish connection:\\n $ex\") \r\n",
+					"}"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"spark.sql(\"show databases\").show()"
 				],
-				"execution_count": 8
+				"execution_count": 7
 			}
 		]
 	}

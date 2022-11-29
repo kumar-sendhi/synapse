@@ -1,0 +1,25 @@
+{
+	"name": "databasefortest",
+	"properties": {
+		"Name": "databasefortest",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://seyonsynapsews@seyonsynapsemetadata.dfs.core.windows.net/databasefortest",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "seyonsynapsews-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "af1e50e0-94e9-4535-85d6-8dd402b6c7bd"
+	},
+	"type": "DATABASE"
+}

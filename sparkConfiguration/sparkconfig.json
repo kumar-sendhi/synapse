@@ -1,0 +1,17 @@
+{
+	"name": "sparkconfig",
+	"properties": {
+		"configs": {
+			"spark.sql.hive.metastore.version": "3.1",
+			"spark.sql.hive.metastore.jars": "/opt/hive-metastore/lib-3.1/*:/usr/hdp/current/hadoop-client/lib/*:/usr/hdp/current/hadoop-client/*",
+			"spark.hadoop.hive.synapse.externalmetastore.linkedservice.name": "ExternalMetaStore"
+		},
+		"created": "2022-11-29T07:07:33.498Z",
+		"createdBy": "kumar.krishnamurthy@emc.com",
+		"configMergeRule": {
+			"artifact.currentOperation.spark.sql.hive.metastore.version": "replace",
+			"artifact.currentOperation.spark.sql.hive.metastore.jars": "replace",
+			"artifact.currentOperation.spark.hadoop.hive.synapse.externalmetastore.linkedservice.name": "replace"
+		}
+	}
+}
