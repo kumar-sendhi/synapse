@@ -1,0 +1,22 @@
+{
+	"name": "nyctaxi",
+	"properties": {
+		"Name": "nyctaxi",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://seyonsynapsews@seyonsynapsemetadata.dfs.core.windows.net/nyctaxi",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "seyonsynapsews-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
