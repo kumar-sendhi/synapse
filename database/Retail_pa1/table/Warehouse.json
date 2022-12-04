@@ -16,10 +16,6 @@
 				{
 					"Name": "WarehouseId",
 					"Description": "The unique identifier of a Warehouse.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "WarehouseId"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "integer",
 						"IsComplexType": false,
@@ -28,15 +24,15 @@
 							"HIVE_TYPE_STRING": "integer"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "WarehouseId"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "WarehouseName",
 					"Description": "The name of the Warehouse.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "WarehouseName"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsComplexType": false,
@@ -46,15 +42,15 @@
 							"HIVE_TYPE_STRING": "string"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "WarehouseName"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "LocationId",
 					"Description": "The unique identifier of a Location.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "LocationId"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "integer",
 						"IsComplexType": false,
@@ -63,15 +59,15 @@
 							"HIVE_TYPE_STRING": "integer"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "LocationId"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "GlobalLocationNumber",
 					"Description": "The Global Location Number (GLN) is a simple tool used to uniquely identify locations. It can be used to identify physical locations such as a warehouse, legal entities, or a function / department within a legal entity. The GLN is part of the GS1 system of standards.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "GlobalLocationNumber"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "decimal",
 						"IsComplexType": false,
@@ -82,15 +78,15 @@
 							"HIVE_TYPE_STRING": "decimal"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "GlobalLocationNumber"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "WarehouseTelephoneNumber",
 					"Description": "The Warehouse Telephone Number.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "WarehouseTelephoneNumber"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "decimal",
 						"IsComplexType": false,
@@ -100,16 +96,16 @@
 						"Properties": {
 							"HIVE_TYPE_STRING": "decimal"
 						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "WarehouseTelephoneNumber"
 					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "WarehouseFaxNumber",
 					"Description": "The Warehouse Fax Number.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "WarehouseFaxNumber"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "decimal",
 						"IsComplexType": false,
@@ -120,15 +116,15 @@
 							"HIVE_TYPE_STRING": "decimal"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "WarehouseFaxNumber"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "WarehouseEmailAddress",
 					"Description": "The Warehouse email address.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "WarehouseEmailAddress"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsComplexType": false,
@@ -137,16 +133,16 @@
 						"Properties": {
 							"HIVE_TYPE_STRING": "string"
 						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "WarehouseEmailAddress"
 					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "PickAndPackLeadTime",
 					"Description": "The default time required to pick and pack an item at a warehouse.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "PickAndPackLeadTime"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsComplexType": false,
@@ -155,16 +151,16 @@
 						"Properties": {
 							"HIVE_TYPE_STRING": "string"
 						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "PickAndPackLeadTime"
 					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "WarehouseOrderCutoffTime",
 					"Description": "The latest time each day that new orders will be accepted for delivery for the next scheduled delivery day.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "WarehouseOrderCutoffTime"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsComplexType": false,
@@ -174,15 +170,15 @@
 							"HIVE_TYPE_STRING": "string"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "WarehouseOrderCutoffTime"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "TotalFloorSpace",
 					"Description": "The total floor space at the Warehouse.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "TotalFloorSpace"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "integer",
 						"IsComplexType": false,
@@ -190,16 +186,16 @@
 						"Properties": {
 							"HIVE_TYPE_STRING": "integer"
 						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "TotalFloorSpace"
 					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "TotalFloorInventoryStorageSpace",
 					"Description": "The total floor space at the Warehouse that is available for storage of inventory.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "TotalFloorInventoryStorageSpace"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "integer",
 						"IsComplexType": false,
@@ -207,16 +203,16 @@
 						"Properties": {
 							"HIVE_TYPE_STRING": "integer"
 						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "TotalFloorInventoryStorageSpace"
 					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "StorageSpaceUnitOfMeasureId",
 					"Description": "The unit of measure for the size measurement of the Warehouse.\n\nEx:\n- square feet\n- square meter",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "StorageSpaceUnitOfMeasureId"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "integer",
 						"IsComplexType": false,
@@ -225,15 +221,15 @@
 							"HIVE_TYPE_STRING": "integer"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "StorageSpaceUnitOfMeasureId"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "ContractWarehouseIndicator",
 					"Description": "A contract warehouse is a business that handles shipping, receiving, and storage of products on a contract basis.  \n\nContract warehouses will generally require a client to commit to a specific period of time (generally in years) for the services.  \n\nContracts may or may not require clients to purchase or subsidize storage and material-handling equipment.  \n\nFees for contract warehouses may be transaction and storage based, fixed, cost plus, or any combination.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "ContractWarehouseIndicator"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "boolean",
 						"IsComplexType": false,
@@ -242,15 +238,15 @@
 							"HIVE_TYPE_STRING": "boolean"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "ContractWarehouseIndicator"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "StoreId",
 					"Description": "The unique identifier of a Store.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "StoreId"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "integer",
 						"IsComplexType": false,
@@ -259,15 +255,15 @@
 							"HIVE_TYPE_STRING": "integer"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "StoreId"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "CustomerId",
 					"Description": "The unique identifier of a Customer.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "CustomerId"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "long",
 						"IsComplexType": false,
@@ -276,15 +272,15 @@
 							"HIVE_TYPE_STRING": "long"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "CustomerId"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "CustomerOwnedWarehouseIndicator",
 					"Description": "Indicates whether the customer owns the warehouse.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "CustomerOwnedWarehouseIndicator"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "boolean",
 						"IsComplexType": false,
@@ -292,16 +288,16 @@
 						"Properties": {
 							"HIVE_TYPE_STRING": "boolean"
 						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "CustomerOwnedWarehouseIndicator"
 					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "CustomerManagedWarehouseIndicator",
 					"Description": "Indicates whether the customer manages the warehouse.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "CustomerManagedWarehouseIndicator"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "boolean",
 						"IsComplexType": false,
@@ -309,16 +305,16 @@
 						"Properties": {
 							"HIVE_TYPE_STRING": "boolean"
 						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "CustomerManagedWarehouseIndicator"
 					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "InventoryOwnedByCustomerIndicator",
 					"Description": "Indicates whether the inventory stored at the warehouse inventory location is owned by the customer.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "InventoryOwnedByCustomerIndicator"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "boolean",
 						"IsComplexType": false,
@@ -327,15 +323,15 @@
 							"HIVE_TYPE_STRING": "boolean"
 						}
 					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "InventoryOwnedByCustomerIndicator"
+					},
 					"DeltaFormatInvalidMessages": []
 				},
 				{
 					"Name": "WarehouseTypeId",
 					"Description": "The unique identifier of a warehouse type.",
-					"BaseAttributeReference": {
-						"Entity": "Warehouse.cdm.json/Warehouse",
-						"Name": "WarehouseTypeId"
-					},
 					"OriginDataTypeName": {
 						"TypeName": "integer",
 						"IsComplexType": false,
@@ -343,6 +339,10 @@
 						"Properties": {
 							"HIVE_TYPE_STRING": "integer"
 						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Warehouse.cdm.json/Warehouse",
+						"Name": "WarehouseTypeId"
 					},
 					"DeltaFormatInvalidMessages": []
 				}
@@ -385,8 +385,7 @@
 			"Description": "A structure designated for storage of things or items.\nA 'warehouse' is synonymous with 'stockroom'.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"\"}",
 			"PrimaryKeys": "WarehouseId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,
