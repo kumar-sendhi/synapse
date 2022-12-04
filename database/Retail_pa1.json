@@ -1,0 +1,24 @@
+{
+	"name": "Retail_pa1",
+	"properties": {
+		"Name": "Retail_pa1",
+		"EntityType": "DATABASE",
+		"Description": "",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Retail\",\"Version\":\"0.1.0\"}}}",
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://retail@formula1seyondl2.dfs.core.windows.net/",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "adlsformula"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
