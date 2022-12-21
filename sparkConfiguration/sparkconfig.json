@@ -6,7 +6,7 @@
 			"spark.sql.hive.metastore.jars": "/opt/hive-metastore/lib-3.1/*:/usr/hdp/current/hadoop-client/lib/*:/usr/hdp/current/hadoop-client/*",
 			"spark.hadoop.hive.synapse.externalmetastore.linkedservice.name": "ExternalMetaStore"
 		},
-		"created": "2022-11-29T07:07:33.498Z",
+		"created": "2022-12-04T20:35:32.695Z",
 		"createdBy": "kumar.krishnamurthy@emc.com",
 		"configMergeRule": {
 			"artifact.currentOperation.spark.sql.hive.metastore.version": "replace",
